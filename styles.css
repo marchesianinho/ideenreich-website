@@ -117,7 +117,7 @@
 
   .photo-frame{
     margin-top:56px;
-    height:340px; border-radius:4px;
+    height:clamp(240px, 42vw, 480px); border-radius:4px;
     background:
       repeating-linear-gradient(135deg, rgba(139,129,114,0.10) 0 2px, transparent 2px 14px),
       linear-gradient(135deg, var(--cream-2), var(--line));
@@ -130,6 +130,11 @@
   .photo-frame img, .about-photo img, .card-photo img, .seasonal-card img, .gift-card img{
     width:100%; height:100%; object-fit:cover; display:block;
   }
+
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  .gallery figure{margin:0; aspect-ratio:4/3; overflow:hidden; border-radius:4px; border:1px solid var(--line);}
+  .gallery img{width:100%; height:100%; object-fit:cover; display:block;}
+  @media(max-width:520px){ .gallery{grid-template-columns:1fr 1fr; gap:10px;} }
 
   /* Section shell */
   section{padding:80px 0;}
